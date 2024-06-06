@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+<!--    <link rel="stylesheet" href="style.css">-->
+</head>
+<body>
+<!--<script src="index.js"></script>-->
+    <main>
+        <a class="rotating-button">Hover Me</a>
+    </main>
+</body>
+</html>
+
+<style>
+    body {
+        height: 100vh;
+        width: 100vw;
+    }
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* BUTTON */
+    /* Rotating Button */
+    .rotating-button {
+        color: #272727;
+        font-family: sans-serif;
+        font-size: 45px;
+        border: 5px solid #272727;
+        padding: 40px 80px;
+        position: relative;
+        text-align: center;
+        overflow: hidden;
+    }
+    .rotating-button:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: #fff200;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transform-origin: bottom left;
+        transform: rotate(-90deg);
+        transition: transform 300ms;
+    }
+    .rotating-button:hover:before {
+        transform: rotate(0deg);
+    }
+</style>
