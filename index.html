@@ -10,7 +10,8 @@
 <body>
 <!--<script src="index.js"></script>-->
     <main>
-        <a class="rotating-button">Hover Me</a>
+        <a class="rotating-button">Rotating Button</a>
+        <a class="swipe-button">Swipe Button</a>
     </main>
 </body>
 </html>
@@ -23,18 +24,21 @@
     main {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        padding: 40px;
     }
     
     /* BUTTON */
-    /* Rotating Button */
-    .rotating-button {
-        color: #272727;
+    a {
         font-family: sans-serif;
-        font-size: 45px;
-        border: 5px solid #272727;
+        font-size: 40px;
+        border: 3px solid #351435;
         padding: 40px 80px;
-        position: relative;
         text-align: center;
+    }
+    /* Rotation */
+    .rotating-button {
+        position: relative;
         overflow: hidden;
     }
     .rotating-button:before {
@@ -52,5 +56,29 @@
     }
     .rotating-button:hover:before {
         transform: rotate(0deg);
+    }
+    
+    /*  Swipe  */
+    .swipe-button {
+        position: relative;
+        overflow: hidden;
+    }
+    .swipe-button:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #351435;
+        z-index: -1;
+        transform: translateX(-100%);
+        transition: all 300ms;
+    }
+    .swipe-button:hover:before {
+        transform: translateX(0);
+    }
+    .swipe-button:hover {
+        color: white;
     }
 </style>
